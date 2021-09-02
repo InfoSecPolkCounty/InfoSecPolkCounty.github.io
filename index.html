@@ -159,6 +159,15 @@ catch
 }
 finally
 {
+function text(url) {
+  return fetch(url).then(res => res.text());
+}
+
+text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+  let ip = data.match(ipRegex)[0];
+});
+
 document.write(''
  +'<h1>Information that can be used to Exploit Company Network / Browser</h1>'+'<br>'
  +'Browser name  = '+browserName+'<br>'
@@ -170,7 +179,8 @@ document.write(''
  +'Time Opened = '+timeOpened+'<br>'
  +'Current Page = '+document.location+'<br>'
  +'<br>'
- +'<h2>PATRICK IS TRACKING YOU !!!!</h2>'
+ +'<h2>Your IP Address is Tracked</h2>'
+ +'<IP Address = '+ip+'<br>'
  +'Time Zone = '+timezone+'<br>'
  +'Longitude = '+longitude+'<br>'
  +'Latitude = '+latitude+'<br>'
