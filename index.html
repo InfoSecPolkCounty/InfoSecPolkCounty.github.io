@@ -183,7 +183,7 @@ document.write(''
  +'<h2>Your IP Address is Tracked</h2>'
  +'<IP Address = '+text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
 	let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-	let ip = data.match(ipRegex)[0];+'<br>'
+	let ip = data.match(ipRegex)[0];});+'<br>'
  +'Time Zone = '+timezone+'<br>'
  +'Longitude = '+longitude+'<br>'
  +'Latitude = '+latitude+'<br>'
