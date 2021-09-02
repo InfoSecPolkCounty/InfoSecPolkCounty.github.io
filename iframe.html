@@ -10,7 +10,14 @@
 text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
   let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
   let ip = data.match(ipRegex)[0];
-  document.write('<h1>IP Address : '+ip+'</h1>')
+  document.write(''
+                 +'<style>'
+                 +'h1 {'
+                 +' color: red;'
+                 +'}'
+                 +'</style>'
+                 +'<h1>IP Address : '+ip+'</h1>'
+                )
 });
 </script>
 
