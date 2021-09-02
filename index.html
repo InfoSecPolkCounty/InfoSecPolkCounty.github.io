@@ -184,12 +184,14 @@ document.write(''
 </script>
 <script>
 
-navigator.geolocation.getCurrentPosition(function(location) 
-{
-	document.write('\n\n\n<div>' + location.coords.latitude + '</div>\n');
-	document.write('\n\n\n<div>' + location.coords.longitude + '</div>\n');
-	document.write('\n\n\n<div>' + location.coords.accuracy + '</div>\n');
-});
+function text(url) {
+  return fetch(url).then(res => res.text());
+}
 
+text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+  let ip = data.match(ipRegex)[0];
+  document.write('<div>'+ip+'</div>');
+});
 </script>
 </html>
