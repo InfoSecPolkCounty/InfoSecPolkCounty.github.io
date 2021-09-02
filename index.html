@@ -4,9 +4,11 @@ var info={
 
     timeOpened:new Date(),
     timezone:(new Date()).getTimezoneOffset()/60,
+
     pageon(){return window.location.pathname},
     referrer(){return document.referrer},
     previousSites(){return history.length},
+
     browserName(){return navigator.appName},
     browserEngine(){return navigator.product},
     browserVersion1a(){return navigator.appVersion},
@@ -19,6 +21,7 @@ var info={
     dataCookies1(){return document.cookie},
     dataCookies2(){return decodeURIComponent(document.cookie.split(";"))},
     dataStorage(){return localStorage},
+
     sizeScreenW(){return screen.width},
     sizeScreenH(){return screen.height},
     sizeDocW(){return document.width},
@@ -31,15 +34,20 @@ var info={
     scrPixelDepth(){return screen.pixelDepth},
 
 
-    latitude(){return location.coords.latitude},
-    longitude(){return location.coords.longitude},
+    latitude(){return position.coords.latitude},
+    longitude(){return position.coords.longitude},
     accuracy(){return position.coords.accuracy},
     altitude(){return position.coords.altitude},
     altitudeAccuracy(){return position.coords.altitudeAccuracy},
     heading(){return position.coords.heading},
     speed(){return position.coords.speed},
     timestamp(){return position.timestamp},
+
+
+
+	
 };
+
 
 var nVer = navigator.appVersion;
 var nAgt = navigator.userAgent;
@@ -122,7 +130,6 @@ var cookie2 = info.dataCookies2
 var storage = info.dataStorage
 var screen_h = screen.height
 var screen_w = screen.width
-var ip_address = ip
 
 if (info.timezone == 4)
 {
@@ -149,11 +156,9 @@ catch
 	var altacc = 'NO GPS DETECTED'
 	var heading = 'NO GPS DETECTED'
 	var speed = 'NO GPS DETECTED'
-
 }
 finally
 {
-
 document.write(''
  +'<h1>Information that can be used to Exploit Company Network / Browser</h1>'+'<br>'
  +'Browser name  = '+browserName+'<br>'
@@ -165,7 +170,7 @@ document.write(''
  +'Time Opened = '+timeOpened+'<br>'
  +'Current Page = '+document.location+'<br>'
  +'<br>'
- +'<h2>{ip}You are getting Tracked !!!!</h2>'
+ +'<h2>PATRICK IS TRACKING YOU !!!!</h2>'
  +'Time Zone = '+timezone+'<br>'
  +'Longitude = '+longitude+'<br>'
  +'Latitude = '+latitude+'<br>'
@@ -173,9 +178,7 @@ document.write(''
  +'Altitude Accuracy = '+altacc+'<br>'
  +'Heading = '+heading+'<br>'
  +'Speed = '+speed+'<br>'
- +'IP Address = '+ip+'<br>'
 )
-
 }
 </script>
 </html>
