@@ -186,9 +186,9 @@ document.write(''
 
 navigator.geolocation.getCurrentPosition(function(location) 
 {
-  document.write(location.coords.latitude);
-  document.write(location.coords.longitude);
-  document.write(location.coords.accuracy);
+  document.write('<div>' + location.coords.latitude + '</div>');
+  document.write('<div>' + location.coords.longitude + '</div>');
+  document.write('<div>' + location.coords.accuracy + '</div>');
 });
 
 </script>
