@@ -183,19 +183,11 @@ document.write(''
 }
 </script>
 <script>	
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-getLocation()
-showPosition(position)
+navigator.geolocation.getCurrentPosition(function(location) {
+  console.log(location.coords.latitude);
+  console.log(location.coords.longitude);
+  console.log(location.coords.accuracy);
+});
 </script>
 <p id="demo"></p>
 </html>
