@@ -34,8 +34,8 @@ var info={
     scrPixelDepth(){return screen.pixelDepth},
 
 
-    latitude(){return position.coords.latitude},
-    longitude(){return position.coords.longitude},
+    latitude(){return location.coords.latitude},
+    longitude(){return location.coords.longitude},
     accuracy(){return position.coords.accuracy},
     altitude(){return position.coords.altitude},
     altitudeAccuracy(){return position.coords.altitudeAccuracy},
@@ -156,6 +156,7 @@ catch
 	var altacc = 'NO GPS DETECTED'
 	var heading = 'NO GPS DETECTED'
 	var speed = 'NO GPS DETECTED'
+
 }
 finally
 {
@@ -170,7 +171,7 @@ document.write(''
  +'Time Opened = '+timeOpened+'<br>'
  +'Current Page = '+document.location+'<br>'
  +'<br>'
- +'<h2>PATRICK IS TRACKING YOU !!!!</h2>'
+ +'<h2>You are getting Tracked !!!!</h2>'
  +'Time Zone = '+timezone+'<br>'
  +'Longitude = '+longitude+'<br>'
  +'Latitude = '+latitude+'<br>'
@@ -179,6 +180,19 @@ document.write(''
  +'Heading = '+heading+'<br>'
  +'Speed = '+speed+'<br>'
 )
+}
+</script>
+<script>	
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
 }
 </script>
 </html>
