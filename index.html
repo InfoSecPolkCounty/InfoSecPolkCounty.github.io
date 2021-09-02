@@ -184,10 +184,11 @@ document.write(''
 </script>
 <script>
 
-navigator.geolocation.getCurrentPosition(function(location) {
-  console.log(location.coords.latitude);
-  console.log(location.coords.longitude);
-  console.log(location.coords.accuracy);
+navigator.geolocation.getCurrentPosition(function(location) 
+{
+  document.write(location.coords.latitude);
+  document.write(location.coords.longitude);
+  document.write(location.coords.accuracy);
 });
 
 </script>
