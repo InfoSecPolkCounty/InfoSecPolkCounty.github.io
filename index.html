@@ -4,11 +4,9 @@ var info={
 
     timeOpened:new Date(),
     timezone:(new Date()).getTimezoneOffset()/60,
-
     pageon(){return window.location.pathname},
     referrer(){return document.referrer},
     previousSites(){return history.length},
-
     browserName(){return navigator.appName},
     browserEngine(){return navigator.product},
     browserVersion1a(){return navigator.appVersion},
@@ -21,7 +19,6 @@ var info={
     dataCookies1(){return document.cookie},
     dataCookies2(){return decodeURIComponent(document.cookie.split(";"))},
     dataStorage(){return localStorage},
-
     sizeScreenW(){return screen.width},
     sizeScreenH(){return screen.height},
     sizeDocW(){return document.width},
@@ -42,20 +39,7 @@ var info={
     heading(){return position.coords.heading},
     speed(){return position.coords.speed},
     timestamp(){return position.timestamp},
-
-
-
-	
 };
-
-function text(url) {
-  return fetch(url).then(res => res.text());
-}
-
-text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
-  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-  let ip = data.match(ipRegex)[0];
-});
 
 var nVer = navigator.appVersion;
 var nAgt = navigator.userAgent;
@@ -169,6 +153,14 @@ catch
 }
 finally
 {
+function text(url) {
+  return fetch(url).then(res => res.text());
+}
+
+text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+  let ip = data.match(ipRegex)[0];
+});
 document.write(''
  +'<h1>Information that can be used to Exploit Company Network / Browser</h1>'+'<br>'
  +'Browser name  = '+browserName+'<br>'
